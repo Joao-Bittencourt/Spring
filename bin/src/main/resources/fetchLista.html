@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Exemplo</title>
+  <script>
+    function carregarPessoas() {
+      fetch("/listarPessoas")
+        .then((resultado) => {
+          resultado.json().then(
+            (pessoas) => {
+              for (let index = 0; index < pessoas.length; index++) {
+                alert(pessoas[index].nome);
+              }
+            }
+          );
+        }
+        );
+    }
+  </script>
+</head>
+
+<body>
+  <button onclick="carregarPessoas()">Pessoas</button>
+</body>
+
+</html>
