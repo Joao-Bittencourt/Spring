@@ -3,13 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifrs.restinga.prog3.jezer.exemplo1.controle;
+package com.joao.exemplo1.controle;
 
-import br.edu.ifrs.restinga.prog3.jezer.exemplo1.excecoes.NaoEncontrado;
-import br.edu.ifrs.restinga.prog3.jezer.exemplo1.excecoes.QuebraRN;
-import br.edu.ifrs.restinga.prog3.jezer.exemplo1.modelo.dao.PessoaDAO;
-import br.edu.ifrs.restinga.prog3.jezer.exemplo1.modelo.entidade.Pessoa;
-import br.edu.ifrs.restinga.prog3.jezer.exemplo1.modelo.rn.PessoaRN;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+
+import com.joao.exemplo1.excecoes.NaoEncontrado;
+import com.joao.exemplo1.excecoes.QuebraRN;
+import com.joao.exemplo1.modelo.dao.PessoaDAO;
+import com.joao.exemplo1.modelo.entidade.Pessoa;
+import com.joao.exemplo1.modelo.rn.PessoaRN;
 
 /**
  *

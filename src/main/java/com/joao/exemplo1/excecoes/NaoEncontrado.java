@@ -3,18 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifrs.restinga.prog3.jezer.exemplo1.excecoes;
+package com.joao.exemplo1.excecoes;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-/**
- *
- * @author jezer
- */
-@ResponseStatus(HttpStatus.BAD_REQUEST)
-public class QuebraRN extends RuntimeException {
-    public QuebraRN(String msg) {
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class NaoEncontrado extends RuntimeException {
+
+    public NaoEncontrado(String msg) {
         super(msg);
     }
     

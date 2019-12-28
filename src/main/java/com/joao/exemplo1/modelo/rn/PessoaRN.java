@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifrs.restinga.prog3.jezer.exemplo1.modelo.rn;
+package com.joao.exemplo1.modelo.rn;
 
-import br.edu.ifrs.restinga.prog3.jezer.exemplo1.excecoes.QuebraRN;
-import br.edu.ifrs.restinga.prog3.jezer.exemplo1.modelo.dao.PessoaDAO;
-import br.edu.ifrs.restinga.prog3.jezer.exemplo1.modelo.entidade.Pessoa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.joao.exemplo1.excecoes.QuebraRN;
+import com.joao.exemplo1.modelo.dao.PessoaDAO;
+import com.joao.exemplo1.modelo.entidade.Pessoa;
 
 @Component
 public class PessoaRN {

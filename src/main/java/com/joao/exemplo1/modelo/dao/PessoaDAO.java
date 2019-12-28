@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifrs.restinga.prog3.jezer.exemplo1.modelo.dao;
+package com.joao.exemplo1.modelo.dao;
 
 import br.edu.ifrs.restinga.prog3.jezer.exemplo1.modelo.entidade.Pessoa;
 import java.util.ArrayList;

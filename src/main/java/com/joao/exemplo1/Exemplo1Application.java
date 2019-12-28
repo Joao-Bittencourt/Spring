@@ -1,4 +1,4 @@
-package br.edu.ifrs.restinga.prog3.jezer.exemplo1;
+package com.joao.exemplo1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
