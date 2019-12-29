@@ -17,7 +17,7 @@ public class PessoaRN {
     @Autowired
     PessoaDAO pessoaDAO;
     
-    private void validar(Pessoa pessoa) {
+    /*private void validar(Pessoa pessoa) {
         if(pessoa.getNome()==null||pessoa.getNome().trim().isEmpty())
             throw new QuebraRN("Nome obrigatorio!");
         if(pessoa.getEmail()==null||pessoa.getEmail().trim().isEmpty())
@@ -39,5 +39,5 @@ public class PessoaRN {
         
         
     }
-           
+      */     
 }

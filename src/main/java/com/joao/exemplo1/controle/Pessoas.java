@@ -23,10 +23,6 @@ import com.joao.exemplo1.modelo.dao.PessoaDAO;
 import com.joao.exemplo1.modelo.entidade.Pessoa;
 import com.joao.exemplo1.modelo.rn.PessoaRN;
 
-/**
- *
- * @author jezer
- */
 @Controller
 @ResponseBody
 public class Pessoas {
@@ -63,12 +59,12 @@ public class Pessoas {
     @RequestMapping(path = "/inserirPessoa", method = RequestMethod.POST)
     public Pessoa inserirPessoa(@RequestBody Pessoa pessoa) {
         
-        pessoaRN.validarCadastro(pessoa);
+       // pessoaRN.validarCadastro(pessoa);
             
         return pessoaDAO.inserir(pessoa);
     }
 
-    @RequestMapping(path = "/excluirPessoa/{id}", method = RequestMethod.GET)
+  /*  @RequestMapping(path = "/excluirPessoa/{id}", method = RequestMethod.GET)
     public void excluirPessoa(@PathVariable int id) {
         if(pessoaDAO.recuperar(id)==null)
             throw new NaoEncontrado("ID:"+id+" não encontrada!");
@@ -80,10 +76,11 @@ public class Pessoas {
     public void atualizarPessoa(@RequestBody Pessoa pessoaNova) {
         pessoaRN.validarAtualizacao(pessoaNova);
         pessoaDAO.atualizar(pessoaNova);
-    }
+    }      return pessoa;      
+
     @RequestMapping(path="/testebanco/{a}", method = RequestMethod.GET)
     public void listarTeste(@PathVariable int a){
         pessoaDAO.listar(a);
         
-    }
+    }*/
 }
