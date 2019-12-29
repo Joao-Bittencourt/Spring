@@ -1,21 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.joao.exemplo1.modelo.dao;
-
-
-
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
-
 import com.joao.exemplo1.modelo.entidade.Pessoa;
 
-
+     
 @Component
 public class PessoaDAO {
     @Autowired
@@ -53,7 +44,7 @@ public class PessoaDAO {
      }
      public Pessoa recuperar(int ID){
        
-       SqlRowSet rowSetPessoa = jdbcTemplate.queryForRowSet("SELECT * FROM pessoa WHERE id = ?",ID);
+       SqlRowSet rowSetPessoa = jdbcTemplate.queryForRowSet("SELECT * FROM funcionario WHERE id = ?",ID);
         if(rowSetPessoa.next()){
          
          return  CriaObjeto(rowSetPessoa);
