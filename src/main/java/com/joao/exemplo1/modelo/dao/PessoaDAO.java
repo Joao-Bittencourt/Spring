@@ -15,18 +15,18 @@ public class PessoaDAO {
     private Pessoa  CriaObjeto(SqlRowSet rowSet){
            Pessoa p =new Pessoa();
            p.setNome(rowSet.getString("nome"));
-           p.setId(rowSet.getInt("id"));
+           p.setId(rowSet.getInt("funcionario_id"));
            //p.setEmail(rowSet.getString("email"));
-           p.setPeso( (int)rowSet.getLong("peso"));
-           p.setAltura(rowSet.getFloat("altura"));
+           p.setSalario( (int)rowSet.getDouble("salario"));
+           p.setSexo(rowSet.getString("sexo"));
            //p.setTelefone();
     return p;
     
     
     }
     public Pessoa inserir(Pessoa pessoa){
-     jdbcTemplate.update("INSERT INTO pessoa(nome,email,peso,altura)VALUES(?,?,?,?)",
-       pessoa.getNome(),pessoa.getEmail(),pessoa.getPeso(),pessoa.getAltura() );                
+     jdbcTemplate.update("INSERT INTO funcionario(nome,salario,nascimento,sexo)VALUES(?,?,?,?)",
+       pessoa.getNome(),pessoa.getSalario(),1992-03-29,pessoa.getSexo());                
       int ID = jdbcTemplate.queryForObject("SELECT LAST_INSERT_ID()",Integer.class);
      
       pessoa.setId(ID);
@@ -34,8 +34,8 @@ public class PessoaDAO {
     }
      public ArrayList<Pessoa> listar( ){
         ArrayList<Pessoa> ListaPessoab =new ArrayList<>();
-       SqlRowSet rowSetPessoa = jdbcTemplate.queryForRowSet("select * from pessoa");
-         jdbcTemplate.execute("select * from pessoa");
+       SqlRowSet rowSetPessoa = jdbcTemplate.queryForRowSet("select * from funcionario");
+         jdbcTemplate.execute("select * from funcionario");
         while(rowSetPessoa.next()){
           
            ListaPessoab.add( CriaObjeto(rowSetPessoa));
@@ -44,7 +44,7 @@ public class PessoaDAO {
      }
      public Pessoa recuperar(int ID){
        
-       SqlRowSet rowSetPessoa = jdbcTemplate.queryForRowSet("SELECT * FROM funcionario WHERE id = ?",ID);
+       SqlRowSet rowSetPessoa = jdbcTemplate.queryForRowSet("SELECT * FROM funcionario WHERE funcionario_id = ?",ID);
         if(rowSetPessoa.next()){
          
          return  CriaObjeto(rowSetPessoa);
@@ -53,8 +53,8 @@ public class PessoaDAO {
      }
      
     public void  atualizar(Pessoa pessoa){
-     jdbcTemplate.update("UPDATE pessoa SET nome=?,email=?,peso=?,altura=? WHERE id=?",
-             pessoa.getNome(),pessoa.getEmail(),pessoa.getPeso(),pessoa.getAltura(),pessoa.getId());    
+     jdbcTemplate.update("UPDATE funcionario SET nome=?,salario=?, sexo=? WHERE funcionario_id=?",
+             pessoa.getNome(),pessoa.getSalario(),pessoa.getSexo(),pessoa.getId());    
                    
       int ID = jdbcTemplate.queryForObject("SELECT LAST_INSERT_ID()",Integer.class);
       pessoa.setId(ID);
@@ -62,18 +62,9 @@ public class PessoaDAO {
     }
    
      public void excluir(int id){
-        jdbcTemplate.update("DELETE FROM pessoa where ID =?",id);
+        jdbcTemplate.update("DELETE FROM funcionario where funcionar io_id =?",id);
     
      }
-     public ArrayList<Pessoa> listar(int a) {
-         ArrayList<Pessoa> pessoas = new ArrayList<>();
-         SqlRowSet rowSetPessoas = jdbcTemplate.queryForRowSet(
-                 "SELECT nome FROM funcionario");
-         while (rowSetPessoas.next()) {
-             Pessoa pessoa = CriaObjeto(rowSetPessoas);
-             pessoas.add(pessoa);
-         }
-         return pessoas;
-     }
+    
 }
 

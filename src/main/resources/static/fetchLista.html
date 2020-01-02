@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo</title>
+    <script>
+        function carregarPessoas() {
+            let nomes;
+            fetch("/listarPessoas")
+                .then((resultado) => {
+                    resultado.json().then(
+                        (pessoas) => {
+                            for (let index = 0; index < pessoas.length; index++) {
+                                nomes[index] = (pessoas[index].nome);
+                            }
+                        }
+                    );
+                });
+            return nomes;
+        }
+        let grid = document.createElement("table");
+        for (let x = 0; carregarPessoas() >= x; x++) {
+            let linha = grid.insertRow();
+            grid.linha.value = nomes[x]
+        }
+        document.body.appendChild(grid);
+    </script>
+</head>
+
+<body>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -64,14 +64,14 @@ public class Pessoas {
         return pessoaDAO.inserir(pessoa);
     }
 
-  /*  @RequestMapping(path = "/excluirPessoa/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/excluirPessoa/{id}", method = RequestMethod.GET)
     public void excluirPessoa(@PathVariable int id) {
         if(pessoaDAO.recuperar(id)==null)
             throw new NaoEncontrado("ID:"+id+" não encontrada!");
         
         pessoaDAO.excluir(id);
     }
-
+    /*
     @RequestMapping(path = "/atualizarPessoa", method = RequestMethod.POST)
     public void atualizarPessoa(@RequestBody Pessoa pessoaNova) {
         pessoaRN.validarAtualizacao(pessoaNova);
